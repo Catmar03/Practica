@@ -21,41 +21,21 @@ public class JFrame_Trapecio extends JFrame{
          
       btnAgregar=new JButton("Agregar");
       btnAgregar.setBounds(50,420,120,30);
-      btnAgregar.addActionListener(new ActionListener()
-      {      public void actionPerformed(ActionEvent e) 
-            {    
-              Registro();
-            }   
-        });
+      btnAgregar.addActionListener(accion);
       add(btnAgregar);
          
       btnMostrar=new JButton("Mostar Datos");
       btnMostrar.setBounds(190,420,120,30);
-      btnMostrar.addActionListener(new ActionListener()
-      {      public void actionPerformed(ActionEvent e) 
-            {    
-               Datos();
-            }
-        });
+      btnMostrar.addActionListener(accion);
       add(btnMostrar); 
       
       btnsalir=new JButton("Salir");
       btnsalir.setBounds(350,420,80,30);
-      btnsalir.addActionListener(new ActionListener()
-      {      public void actionPerformed(ActionEvent e) 
-            {    
-               System.exit(0);
-            }
-        });
+      btnsalir.addActionListener(accion);
       add(btnsalir); 
       btnArqui=new JButton("Arquitecto");
       btnArqui.setBounds(450,420,100,30);
-      btnArqui.addActionListener(new ActionListener()
-      {      public void actionPerformed(ActionEvent e) 
-            {    
-               
-            }
-        });
+      btnArqui.addActionListener(accion);
       add(btnArqui); 
       
       lblNombre=new JLabel("Metodo del Trapecio :");
@@ -96,6 +76,23 @@ public class JFrame_Trapecio extends JFrame{
       barra.setBounds(400,80,480,300);
       add(barra);
     }
+    
+    ActionListener accion = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            if (e.getSource() == btnAgregar) {
+                Registro();
+            }
+            if (e.getSource() == btnMostrar) {
+                Datos();
+            }
+            if (e.getSource() == btnsalir) {
+                System.exit(0);
+            }
+        }
+    };
+    
     public JFrame_Trapecio(){
         initComponents();
     }
@@ -112,10 +109,11 @@ public class JFrame_Trapecio extends JFrame{
         resultado.append("Total de iteraciones             :"+trape.getN()+"\n");
         resultado.append("limite superior              :"+trape.getB()+"\n");
         resultado.append("limite inferior             :"+trape.getA()+"\n");
-        resultado.append("El valor de h           :"+trape.CalcularH()+"\n");
+        resultado.append("El valor de h           :"+trape.CalcularH()+"\n");        
         resultado.append("El valor de x " +trape.Datox()+"\n");
         resultado.append("VAlor de f            :"+trape.Funcion()+"\n");
         resultado.append("Resultado            :"+trape.Resultado()+"\n");
+
         Limpiar();
     }
     public void Limpiar(){
