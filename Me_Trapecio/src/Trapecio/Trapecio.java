@@ -88,7 +88,7 @@ public class Trapecio {
 
     public float Funcion() {
         for (int i = 0; i < v; i++) {
-
+//
             fi = variable + (dimension[i] * dimension[i]);
             return dimension[i] = fi;
         }
@@ -108,7 +108,6 @@ public class Trapecio {
     }
 
     public float Resultado() {
-
         for (int i = 0; i < v; i++) {
 
             fi = variable + (dimension[i] * dimension[i]);
